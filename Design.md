@@ -102,3 +102,42 @@ The scraper also generates a metrics_<location>.json file summarizing the run:
   }
 }
 ```
+## 5. Error Handling
+
+The scraper is designed to handle errors gracefully:
+
+- **Timeouts / Missing elements:**
+  - Uses `WebDriverWait` and `TimeoutException` for clickable elements.
+  - If "Mehr Anzeigen" is not found, pagination stops safely.
+
+- **Empty results:**
+  - If a page has no listings, a debug message is logged and scraping continues/ends properly.
+
+- **Invalid or missing fields:**
+  - Each field (`name`, `address`, `phone`, etc.) is extracted safely.
+  - Missing fields are stored as `None`.
+
+- **Exceptions:**
+  - The main scraping loop is wrapped in `try/except`.
+  - All exceptions are logged via `logging.exception` without stopping the scraping of other professions.
+
+- **Safe numeric conversion:**
+  - `_safe_int` method ensures integers are parsed safely, defaulting to `0` if missing or malformed.
+
+## 6. Testing Strategy
+
+Testing is implemented using **pytest** and a **DummyDriver**:
+
+- **DummyDriver:**
+  - Simulates Selenium WebDriver methods (`get`, `page_source`) to test scraping without a real browser.
+
+- **Test cases include:**
+  1. **Basic listing parsing:**
+     - Verifies all fields (`name`, `address`, `phone`, `website`, `rating`, `reviews`, `category`, `location`) are correctly extracted from sample HTML.
+  2. **Empty page handling:**
+     - Ensures scraper returns an empty list when no listings are found.
+  3. **Field parsing:**
+     - Confirms missing or malformed fields are safely handled (`None` assigned).
+
+- **Metrics and CSV/JSON export:**
+  - Can be verified through the exported files to ensure correct data transformation and storage.
