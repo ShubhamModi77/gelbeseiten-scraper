@@ -69,7 +69,7 @@ Each listing is represented as a dictionary:
   "rating": "4,9",
   "reviews": "212 Bewertungen",
   "category": "Rechtsanwälte",
-  "website": "https://example-website.de"
+  "website": null
 }
 
 ```
@@ -79,7 +79,7 @@ In addition to JSON, listings are exported in CSV format with normalized fields.
 
 ```CSV
 name,profession,street,postal_code,city,telephone,website
-Dr. Olsen Schewtschenko Kanzlei für Arbeitsrecht,rechtsanwalt,Sonnenstr. 32,80331,München,089 21 54 89 40,https://example-website.de
+Dr. Olsen Schewtschenko Kanzlei für Arbeitsrecht,rechtsanwalt,Sonnenstr. 32,80331,München,089 21 54 89 40
 ```
 
 ### 4.3 Metrics Data
