@@ -24,7 +24,7 @@ sample_html = """
 
 class DummyDriver:
     def get(self, url):
-        pass  # do nothing
+        pass
 
     @property
     def page_source(self):
@@ -37,7 +37,7 @@ class DummyDriver:
         raise NoSuchElementException()
 
     def quit(self):
-        pass  # do nothing
+        pass
 
 
 def test_fetch_listings_basic():

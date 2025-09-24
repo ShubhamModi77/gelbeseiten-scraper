@@ -21,7 +21,7 @@ def scrape_and_save(professions, location, output_dir="results", debug=False):
 
     start_time = time.time()
 
-    # === NEW: metrics container ===
+    # metrics container
     metrics = {"location": location, "professions": {}, "totals": {}}
 
     for idx, prof in enumerate(professions, 1):
@@ -68,13 +68,13 @@ def scrape_and_save(professions, location, output_dir="results", debug=False):
             f"ETA: ~{remaining:.1f}s"
         )
 
-        # === NEW: save metrics for this profession ===
+        # save metrics for this profession
         metrics["professions"][prof] = {
             "entries": total,
             "time_sec": round(prof_elapsed, 1),
         }
 
-    # === NEW: totals ===
+    # totals
     total_time = time.time() - start_time
     print(f"Finished scraping in {total_time:.1f} seconds.")
     metrics["totals"] = {
@@ -83,7 +83,7 @@ def scrape_and_save(professions, location, output_dir="results", debug=False):
         "time_min": round(total_time / 60, 1),
     }
 
-    # === NEW: write metrics file ===
+    # write metrics file
     metrics_file = os.path.join(results_dir, f"metrics_{safe_location}.json")
     with open(metrics_file, "w", encoding="utf-8") as f:
         json.dump(metrics, f, ensure_ascii=False, indent=2)
