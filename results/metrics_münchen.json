@@ -1,0 +1,16 @@
+{
+  "location": "München",
+  "professions": {
+    "sanitärinstallation": {"entries": 4293, "time_sec": 203.6},
+    "elektroinstallationen": {"entries": 4593, "time_sec": 216.5},
+    "steuerberatung": {"entries": 44590, "time_sec": 775.6},
+    "arzt": {"entries": 3720, "time_sec": 196.5},
+    "rechtsanwalt": {"entries": 268263, "time_sec": 2486.4}
+  },
+  "totals": {
+    "entries": 325459,
+    "time_sec": 3878.6,
+    "time_min": 64.6
+  }
+}
+
