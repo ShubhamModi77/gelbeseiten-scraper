@@ -5,7 +5,7 @@ It extracts business listings by **profession** and **location**, then exports t
 
 ---
 
-## 🚀 Features
+## Features
 
 - Scrapes listings for any profession and location.
 - Extracts:
@@ -25,7 +25,14 @@ It extracts business listings by **profession** and **location**, then exports t
 
 ---
 
-## 📦 Installation
+## Requirements
+
+- **Python:** 3.12.4
+- **pip:** 23+
+- **Libraries:** `selenium`, `webdriver-manager`, `beautifulsoup4`, `pandas`
+- **Google Chrome & ChromeDriver**
+
+## Installation (Local)
 
 1. Clone this repository:
    ```bash
@@ -35,8 +42,11 @@ It extracts business listings by **profession** and **location**, then exports t
 
 2. Create and activate a virtual environment:
     ```
-    python -m venv myvenv
-    myvenv\Scripts\activate
+    python -m venv venv
+    # Windows
+    venv\Scripts\activate
+    # Linux/macOS
+    source venv/bin/activate
     ```
 
 3. Install dependencies:
@@ -44,7 +54,7 @@ It extracts business listings by **profession** and **location**, then exports t
     pip install -r requirements.txt
     ```
 
-## 🛠 Usage
+## Usage
 
 Basic command:
 ```
@@ -58,7 +68,7 @@ With custom input file:
 python src/main.py --location "München" --input-file professions.txt
 ```
 
-## 📂 Output
+## Output
 All results are stored in the `results/` directory:
 
 - Per profession:
@@ -79,7 +89,7 @@ All results are stored in the `results/` directory:
 
     - metrics_münchen.json
 
-## 🧪 Testing
+## Testing
 ```
 pytest -v
 ```
