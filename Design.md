@@ -139,3 +139,11 @@ Testing is implemented using **pytest** and a **DummyDriver**:
 
 - **Metrics and CSV/JSON export:**
   - Can be verified through the exported files to ensure correct data transformation and storage.
+
+## 7. Future Improvements
+
+- Parallel or asynchronous scraping to reduce runtime
+- Export results to databases (SQLite/PostgreSQL) and Excel format
+- Retry logic, proxy rotation, and user-agent randomization for resilience
+- Dockerfile for reproducible environments
+- web interface (Flask/FastAPI) for easier use
