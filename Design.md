@@ -121,8 +121,6 @@ The scraper is designed to handle errors gracefully:
   - The main scraping loop is wrapped in `try/except`.
   - All exceptions are logged via `logging.exception` without stopping the scraping of other professions.
 
-- **Safe numeric conversion:**
-  - `_safe_int` method ensures integers are parsed safely, defaulting to `0` if missing or malformed.
 
 ## 6. Testing Strategy
 
